@@ -17,6 +17,11 @@
 	<br>
 	<div class="container">
         <div class='.col-xs-12 .col-sm-6 .col-md-8'>
+          <ol class="breadcrumb">
+                <li><a href="<?php echo base_url() . 'c_index/home' ?>">Home</a></li>
+                <li class="active">Data</li>
+                <li><a href="<?php echo base_url() . 'c_doctor_mitra_schedule/mitra_cikarang' ?>">Schedule</a></li>
+              </ol>
             <div class="panel panel-default">
                     <!-- Default panel contents -->
                 <div class="panel-heading"><h4>Hospital Data</h4></div>

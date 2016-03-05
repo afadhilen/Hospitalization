@@ -4,7 +4,7 @@
 
 
 	include('application/libraries/libs/simple_html_dom.php');
-	class C_doctor_mitra extends CI_Controller {
+	class C_doctor_mitra_schedule extends CI_Controller {
 		
 	    public function index() {
 	    	$this->load->view('v_index');
@@ -29,14 +29,44 @@
 			$doc_name_4 = $html_4->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
 			$doc_name_5 = $html_5->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
 
+			$index = 0;
+			$index2 = 0;
+			$data = array();
+			foreach ($doc_name_1 as $table_list) {
+				$data1[] = $table_list;
+			}
+			foreach ($doc_name_2 as $table_list) {
+				$data2[] = $table_list;
+			}
+			foreach ($doc_name_3 as $table_list) {
+				$data3[] = $table_list;
+			}
+			foreach ($doc_name_4 as $table_list) {
+				$data4[] = $table_list;
+			}
+			foreach ($doc_name_5 as $table_list) {
+				$data5[] = $table_list;
+			}
+			while($index <= 9){
+				$list1[]=$data1[$index];
+				$list2[]=$data2[$index];
+				$list3[]=$data3[$index];
+				$list4[]=$data4[$index];
+				$index = $index + 1;
+			}
+			while($index2 <= 1){
+				$list5[]=$data5[$index2];
+				$index2 = $index2 + 1;
+			}
+			$array1 = array_merge($list1,$list2, $list3, $list4, $list5);
 			$data = array(
-							'name_1' => $doc_name_1,
-							'name_2' => $doc_name_2,
-							'name_3' => $doc_name_3,
-							'name_4' => $doc_name_4,
-							'name_5' => $doc_name_5
-						);
-			$this->load->view('v_doctor_mitra_cikarang', $data);
+							'name_1' => $list1,
+							'name_2' => $list2,
+							'name_3' => $list3,
+							'name_4' => $list4,
+							'name_5' => $list5,
+						 );
+			$this->load->view('v_doctor_mitra_cikarang_schedule', $data);
 	    }
 
 	    public function mitra_bekasi(){
@@ -70,19 +100,67 @@
 			$doc_name_8 = $html_8->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
 			$doc_name_9 = $html_9->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
 			
+			$index = 0;
+			$index2 = 0;
+			$data = array();
+			foreach ($doc_name_1 as $table_list) {
+				$data1[] = $table_list;
+			}
+			foreach ($doc_name_2 as $table_list) {
+				$data2[] = $table_list;
+			}
+			foreach ($doc_name_3 as $table_list) {
+				$data3[] = $table_list;
+			}
+			foreach ($doc_name_4 as $table_list) {
+				$data4[] = $table_list;
+			}
+			foreach ($doc_name_5 as $table_list) {
+				$data5[] = $table_list;
+			}
+			foreach ($doc_name_6 as $table_list) {
+				$data6[] = $table_list;
+			}
+			foreach ($doc_name_7 as $table_list) {
+				$data7[] = $table_list;
+			}
+			foreach ($doc_name_8 as $table_list) {
+				$data8[] = $table_list;
+			}
+			foreach ($doc_name_9 as $table_list) {
+				$data9[] = $table_list;
+			}
+
+			while($index <= 9){
+				$list1[]=$data1[$index];
+				$list2[]=$data2[$index];
+				$list3[]=$data3[$index];
+				$list4[]=$data4[$index];
+				$list5[]=$data5[$index];
+				$list6[]=$data6[$index];
+				$list7[]=$data7[$index];
+				$list8[]=$data8[$index];
+
+				$index = $index + 1;
+			}
+			while($index2 <= 3){
+				$list9[]=$data9[$index2];
+				$index2 = $index2 + 1;
+			}
+
 			$data = array(
-							'name_1' => $doc_name_1,
-							'name_2' => $doc_name_2,
-							'name_3' => $doc_name_3,
-							'name_4' => $doc_name_4,
-							'name_5' => $doc_name_5,
-							'name_6' => $doc_name_6,
-							'name_7' => $doc_name_7,
-							'name_8' => $doc_name_8,
-							'name_9' => $doc_name_9
+							'name_1' => $list1,
+							'name_2' => $list2,
+							'name_3' => $list3,
+							'name_4' => $list4,
+							'name_5' => $list5,
+							'name_6' => $list6,
+							'name_7' => $list7,
+							'name_8' => $list8,
+							'name_9' => $list9
 						);
 
-			$this->load->view('v_doctor_mitra_bekasi', $data);
+			$this->load->view('v_doctor_mitra_bekasi_schedule', $data);
 	    }
 
 	    public function mitra_bekasi_timur(){
@@ -114,17 +192,58 @@
 			$doc_name_7 = $html_7->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
 			$doc_name_8 = $html_8->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
 			
+			$index = 0;
+			$index2 = 0;
+			$data = array();
+			foreach ($doc_name_1 as $table_list) {
+				$data1[] = $table_list;
+			}
+			foreach ($doc_name_2 as $table_list) {
+				$data2[] = $table_list;
+			}
+			foreach ($doc_name_3 as $table_list) {
+				$data3[] = $table_list;
+			}
+			foreach ($doc_name_4 as $table_list) {
+				$data4[] = $table_list;
+			}
+			foreach ($doc_name_5 as $table_list) {
+				$data5[] = $table_list;
+			}
+			foreach ($doc_name_6 as $table_list) {
+				$data6[] = $table_list;
+			}
+			foreach ($doc_name_7 as $table_list) {
+				$data7[] = $table_list;
+			}
+			foreach ($doc_name_8 as $table_list) {
+				$data8[] = $table_list;
+			}
+
+			while($index <= 9){
+				$list1[]=$data1[$index];
+				$list2[]=$data2[$index];
+				$list3[]=$data3[$index];
+				$list4[]=$data4[$index];
+				$list5[]=$data5[$index];
+				$list6[]=$data6[$index];
+				$list7[]=$data7[$index];
+				$list8[]=$data8[$index];
+
+				$index = $index + 1;
+			}
+
 			$data = array(
-							'name_1' => $doc_name_1,
-							'name_2' => $doc_name_2,
-							'name_3' => $doc_name_3,
-							'name_4' => $doc_name_4,
-							'name_5' => $doc_name_5,
-							'name_6' => $doc_name_6,
-							'name_7' => $doc_name_7,
-							'name_8' => $doc_name_8
+							'name_1' => $list1,
+							'name_2' => $list2,
+							'name_3' => $list3,
+							'name_4' => $list4,
+							'name_5' => $list5,
+							'name_6' => $list6,
+							'name_7' => $list7,
+							'name_8' => $list8
 						);
-			$this->load->view('v_doctor_mitra_bekasi_timur', $data);
+			$this->load->view('v_doctor_mitra_bekasi_timur_schedule', $data);
 	    }
 	}
 ?>

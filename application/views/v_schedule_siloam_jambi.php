@@ -14,6 +14,11 @@
 	<br><br><br><br>
 	<div class="container">
 		<div class='.col-xs-12 .col-sm-6 .col-md-8'>
+			<ol class="breadcrumb">
+            		<li><a href="<?php echo base_url() . 'c_index/home' ?>">Home</a></li>
+            		<li><a href="<?php echo base_url() . 'c_doctor_siloam/siloam_jambi' ?>">Data</a></li>
+            		<li class="active">Schedule</li>
+            	</ol>
 			<div class="panel panel-default">
 				<div class="panel-heading"><h3>Schedule</h3></div>
 				<?php
