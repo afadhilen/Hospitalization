@@ -245,5 +245,218 @@
 						);
 			$this->load->view('v_doctor_mitra_bekasi_timur_schedule', $data);
 	    }
+
+	    public function mitra_kelapagading(){
+	    	$this->load->model('hospitalization_model');
+
+			$url_1 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=1";
+			$url_2 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=2";
+			$url_3 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=3";
+			$url_4 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=4";
+			$url_5 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=5";
+			$url_6 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=6";
+			$url_7 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=7";
+			$url_8 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=8";
+			$url_9 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=9";
+			$url_10 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=10";
+			$url_11 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=11";
+			$url_12 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=12";
+			$url_13 = "http://mitrakeluarga.com/kelapagading/jadwal-dokter/?wpv_view_count=6482&wpv_paged=13";
+
+			$html_1 = file_get_html($url_1);
+			$html_2 = file_get_html($url_2);
+			$html_3 = file_get_html($url_3);
+			$html_4 = file_get_html($url_4);
+			$html_5 = file_get_html($url_5);
+			$html_6 = file_get_html($url_6);
+			$html_7 = file_get_html($url_7);
+			$html_8 = file_get_html($url_8);
+			$html_9 = file_get_html($url_9);
+			$html_10 = file_get_html($url_10);
+			$html_11 = file_get_html($url_11);
+			$html_12 = file_get_html($url_12);
+			$html_13 = file_get_html($url_13);
+
+			$doc_name_1 = $html_1->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_2 = $html_2->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_3 = $html_3->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_4 = $html_4->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_5 = $html_5->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_6 = $html_6->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_7 = $html_7->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_8 = $html_8->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_9 = $html_9->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_10 = $html_10->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_11 = $html_11->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_12 = $html_12->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_13 = $html_13->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+	    	
+	    	$index = 0;
+			$index2 = 0;
+			$data = array();
+			foreach ($doc_name_1 as $table_list) {
+				$data1[] = $table_list;
+			}
+			foreach ($doc_name_2 as $table_list) {
+				$data2[] = $table_list;
+			}
+			foreach ($doc_name_3 as $table_list) {
+				$data3[] = $table_list;
+			}
+			foreach ($doc_name_4 as $table_list) {
+				$data4[] = $table_list;
+			}
+			foreach ($doc_name_5 as $table_list) {
+				$data5[] = $table_list;
+			}
+			foreach ($doc_name_6 as $table_list) {
+				$data6[] = $table_list;
+			}
+			foreach ($doc_name_7 as $table_list) {
+				$data7[] = $table_list;
+			}
+			foreach ($doc_name_8 as $table_list) {
+				$data8[] = $table_list;
+			}
+			foreach ($doc_name_9 as $table_list) {
+				$data9[] = $table_list;
+			}
+			foreach ($doc_name_10 as $table_list) {
+				$data10[] = $table_list;
+			}
+			foreach ($doc_name_11 as $table_list) {
+				$data11[] = $table_list;
+			}
+			foreach ($doc_name_12 as $table_list) {
+				$data12[] = $table_list;
+			}
+			foreach ($doc_name_13 as $table_list) {
+				$data13[] = $table_list;
+			}
+
+			while($index <= 9){
+				$list1[]=$data1[$index];
+				$list2[]=$data2[$index];
+				$list3[]=$data3[$index];
+				$list4[]=$data4[$index];
+				$list5[]=$data5[$index];
+				$list6[]=$data6[$index];
+				$list7[]=$data7[$index];
+				$list8[]=$data8[$index];
+				$list9[]=$data9[$index];
+				$list10[]=$data10[$index];
+				$list11[]=$data11[$index];
+				$list12[]=$data12[$index];
+
+				$index = $index + 1;
+			}
+
+			while($index2 <= 7){
+				$list13[]=$data13[$index2];
+				$index2 = $index2 + 1;
+			}
+
+			$data = array(
+							'name_1' => $list1,
+							'name_2' => $list2,
+							'name_3' => $list3,
+							'name_4' => $list4,
+							'name_5' => $list5,
+							'name_6' => $list6,
+							'name_7' => $list7,
+							'name_8' => $list8,
+							'name_9' => $list9,
+							'name_10' => $list10,
+							'name_11' => $list11,
+							'name_12' => $list12,
+							'name_13' => $list13
+						);
+			$this->load->view('v_doctor_mitra_kelapagading_schedule', $data);
+	    }
+
+	    public function mitra_depok(){
+	    	$this->load->model('hospitalization_model');
+
+			$url_1 = "http://mitrakeluarga.com/depok/jadwal-dokter/?wpv_view_count=6482&wpv_paged=1";
+			$url_2 = "http://mitrakeluarga.com/depok/jadwal-dokter/?wpv_view_count=6482&wpv_paged=2";
+			$url_3 = "http://mitrakeluarga.com/depok/jadwal-dokter/?wpv_view_count=6482&wpv_paged=3";
+			$url_4 = "http://mitrakeluarga.com/depok/jadwal-dokter/?wpv_view_count=6482&wpv_paged=4";
+			$url_5 = "http://mitrakeluarga.com/depok/jadwal-dokter/?wpv_view_count=6482&wpv_paged=5";
+			$url_6 = "http://mitrakeluarga.com/depok/jadwal-dokter/?wpv_view_count=6482&wpv_paged=6";
+			$url_7 = "http://mitrakeluarga.com/depok/jadwal-dokter/?wpv_view_count=6482&wpv_paged=7";
+			$url_8 = "http://mitrakeluarga.com/depok/jadwal-dokter/?wpv_view_count=6482&wpv_paged=8";
+			
+			$html_1 = file_get_html($url_1);
+			$html_2 = file_get_html($url_2);
+			$html_3 = file_get_html($url_3);
+			$html_4 = file_get_html($url_4);
+			$html_5 = file_get_html($url_5);
+			$html_6 = file_get_html($url_6);
+			$html_7 = file_get_html($url_7);
+			$html_8 = file_get_html($url_8);
+			
+			$doc_name_1 = $html_1->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_2 = $html_2->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_3 = $html_3->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_4 = $html_4->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_5 = $html_5->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_6 = $html_6->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_7 = $html_7->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			$doc_name_8 = $html_8->find('div[class="js-wpv-view-layout js-wpv-layout-responsive wpv-pagination js-wpv-layout-has-pagination wpv-pagination-preload-images js-wpv-layout-preload-images wpv-pagination-preload-pages js-wpv-layout-preload-pages"] table tbody tr');
+			
+			$index = 0;
+			$index2 = 0;
+			$data = array();
+			foreach ($doc_name_1 as $table_list) {
+				$data1[] = $table_list;
+			}
+			foreach ($doc_name_2 as $table_list) {
+				$data2[] = $table_list;
+			}
+			foreach ($doc_name_3 as $table_list) {
+				$data3[] = $table_list;
+			}
+			foreach ($doc_name_4 as $table_list) {
+				$data4[] = $table_list;
+			}
+			foreach ($doc_name_5 as $table_list) {
+				$data5[] = $table_list;
+			}
+			foreach ($doc_name_6 as $table_list) {
+				$data6[] = $table_list;
+			}
+			foreach ($doc_name_7 as $table_list) {
+				$data7[] = $table_list;
+			}
+			foreach ($doc_name_8 as $table_list) {
+				$data8[] = $table_list;
+			}
+
+			while($index <= 9){
+				$list1[]=$data1[$index];
+				$list2[]=$data2[$index];
+				$list3[]=$data3[$index];
+				$list4[]=$data4[$index];
+				$list5[]=$data5[$index];
+				$list6[]=$data6[$index];
+				$list7[]=$data7[$index];
+				$list8[]=$data8[$index];
+
+				$index = $index + 1;
+			}
+
+			$data = array(
+							'name_1' => $list1,
+							'name_2' => $list2,
+							'name_3' => $list3,
+							'name_4' => $list4,
+							'name_5' => $list5,
+							'name_6' => $list6,
+							'name_7' => $list7,
+							'name_8' => $list8
+						);
+			$this->load->view('v_doctor_mitra_depok_schedule', $data);
+
+	    }
 	}
 ?>

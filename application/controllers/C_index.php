@@ -11,7 +11,7 @@ class C_index extends CI_Controller {
 
     public function index() {
     	
-        $this->load->view('v_index');
+        $this->load->view('v_home');
     }
 
     public function home(){
@@ -19,9 +19,14 @@ class C_index extends CI_Controller {
     }
     
     public function search_doctor(){
-    	$this->load->view('v_search');
+    	$hospital = $this->hospitalization_model->getdata_hospital();
+    	
+    	$data = array(
+    					'data_hosp' => $hospital
+    				);
+
+    	$this->load->view('v_search', $data);
     }
-    
     public function getHospital(){		
 		$this->db->select('*');
 		$this->db->from('hospital');
@@ -106,9 +111,51 @@ class C_index extends CI_Controller {
     public function search(){
     	$this->load->model('hospitalization_model');
     	$name = $this->input->post('search');
-    	$data = array('result' => $this->hospitalization_model->search_doctor($name));
-    		
+    	$search_hospital = $this->input->post('select_hospital');
+    	$search_spec = $this->input->post('select_specialist');
+    	$hospital = $this->hospitalization_model->getdata_hospital();
+    	
+    	if ($name == ""){
+    		$result = "";
+    	} else{
+    		$result = $this->hospitalization_model->search_doctor($name);
+    	}
+
+    	$data = array(
+    					'result' => $result,
+    					'result1' => $this->hospitalization_model->search_dropdown($search_hospital),
+    					'result2' => $this->hospitalization_model->search_dropdown_2($search_spec),
+    					'data_hosp' => $hospital
+    				);
+    	
 		$this->load->view('v_search', $data);
+    }
+
+    // public function search_drop(){
+    // 	$this->load->model('hospitalization_model');
+    // 	$search = $this->input->post('select_hospital');
+    // 	$search_spec = $this->input->post('select_specialist');
+
+    // 	$data = array(
+    // 					'result1' => $this->hospitalization_model->search_dropdown($search),
+    // 					'result2' => $this->hospitalization_model->search_dropdown_2($search_spec)
+    // 		);
+
+    // 	$this->load->view('v_search', $data);
+    // }
+
+    // public function search_specialist(){
+    // 	$this->load->model('hospitalization_model');
+    // 	$search_spec = $this->input->post('select_specialist');
+
+    // 	$data = array(
+    // 					'result2' => $this->hospitalization_model->search_dropdown_2($search_spec)
+    // 		);
+    // 	$this->load->view('v_search', $data);
+    // }
+
+    public function about(){
+    	$this->load->view('v_about');
     }
 }
 

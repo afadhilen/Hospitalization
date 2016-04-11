@@ -17,8 +17,8 @@
 		<div class="container">
 			<div class='.col-xs-12 .col-sm-6 .col-md-8'>
 			<ol class="breadcrumb">
-            		<li><a href="<?php echo base_url() . 'c_doctor_mitra/mitra_cikarang_home' ?>">Home</a></li>
-            		<li><a href="<?php echo base_url() . 'c_doctor_mitra/mitra_cikarang' ?>">Data</a></li>
+            		<li><a href="<?php echo base_url() . 'c_doctor_mitra/mitra_kelapagading_home' ?>">Home</a></li>
+            		<li><a href="<?php echo base_url() . 'c_doctor_mitra/mitra_kelapagading' ?>">Data</a></li>
             		<li class="active">Schedule</li>
             	</ol>
 				<div class="panel panel-default">
@@ -57,6 +57,46 @@
 									<?php foreach ($name_5 as $doc_name_5) { ?>
 									<tr>
 										<td><?php echo $doc_name_5;?></td>
+									</tr>
+									<?php } ?>
+									<?php foreach ($name_6 as $doc_name_6) { ?>
+									<tr>
+										<td><?php echo $doc_name_6;?></td>
+									</tr>
+									<?php } ?>
+									<?php foreach ($name_7 as $doc_name_7) { ?>
+									<tr>
+										<td><?php echo $doc_name_7;?></td>
+									</tr>
+									<?php } ?>
+									<?php foreach ($name_8 as $doc_name_8) { ?>
+									<tr>
+										<td><?php echo $doc_name_8;?></td>
+									</tr>
+									<?php } ?>
+									<?php foreach ($name_9 as $doc_name_9) { ?>
+									<tr>
+										<td><?php echo $doc_name_9;?></td>
+									</tr>
+									<?php } ?>
+									<?php foreach ($name_10 as $doc_name_10) { ?>
+									<tr>
+										<td><?php echo $doc_name_10;?></td>
+									</tr>
+									<?php } ?>
+									<?php foreach ($name_11 as $doc_name_11) { ?>
+									<tr>
+										<td><?php echo $doc_name_11;?></td>
+									</tr>
+									<?php } ?>
+									<?php foreach ($name_12 as $doc_name_12) { ?>
+									<tr>
+										<td><?php echo $doc_name_12;?></td>
+									</tr>
+									<?php } ?>
+									<?php foreach ($name_13 as $doc_name_13) { ?>
+									<tr>
+										<td><?php echo $doc_name_13;?></td>
 									</tr>
 									<?php } ?>
 								</table>

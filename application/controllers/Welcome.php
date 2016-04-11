@@ -35,4 +35,16 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('links_loops');
 	}
+	public function schedule()
+	{
+		$this->load->view('schedule');
+	}
+	public function siloam()
+	{
+		$this->load->view('siloam');
+	}
+	public function test(){
+    	$data = $this->hospitalization_model->test();
+		$this->load->view('test', array('list_data' => $data));
+    }
 }

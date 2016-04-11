@@ -7,14 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap.min.css'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap-theme.min.css'); ?>">
-		<title>Doctors List</title>
+		<title>Admin Page</title>
 	</head>
 	<body>
-        <?php $this->load->view('includes/nav-header.php'); ?>
-    <br><br><br><br><br>
     <div class="container">
+    <br>
+    <br>
         <div class ='row top-buffer'>
             <div class='.col-xs-12 .col-md-8 .col-sm-6'>
+                    <ol class="breadcrumb">
+                        <li class="active">List</li>
+                        <li><a href="<?php echo base_url() . 'c_admin/addadmin' ?>">Add List</a></li>
+                    </ol>
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
                     <div class="panel-heading"><h4>Hospital List</h4></div>
@@ -28,20 +32,25 @@
                                 <th>Address</th>
                                 <th>Contact</th>
                                 <th>Email</th>
+                                <th></th>
                                 </thead>
-                                <?php foreach ($list_hospital as $data) { ?>
+                                <?php
+                                 foreach ($list_hospital as $data => $value) { 
+                                    ?>
                                     <tr>
-                                        <td><?= $data['no']; ?></td>
-                                        <td><?= $data['name']; ?></td>
-                                        <td><?= $data['address']; ?></td>
-                                        <td><?= $data['phone']; ?></td>
-                                        <td><?= $data['email']; ?></td>
+                                        <td><?= $value['no']; ?></td>
+                                        <td><?= $value['name']; ?></td>
+                                        <td><?= $value['address']; ?></td>
+                                        <td><?= $value['phone']; ?></td>
+                                        <td><?= $value['email']; ?></td>
+                                        <td><a class = "glyphicon glyphicon-trash" href="<?= site_url("c_admin/delete/{$value['no']}") ?>"></a></td>
                                     </tr>
                                <?php } ?>
                             </table>
                         </center>
                         </table>
                     </div>
+                    <a href = "<?php echo base_url() . 'c_index/about'; ?>" class="btn btn-default btn-sm"><<</a>
                 </div>
             </div>
         </div>

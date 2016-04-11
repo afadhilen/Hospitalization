@@ -23,7 +23,7 @@
               </ol>
             <div class="panel panel-default">
                     <!-- Default panel contents -->
-                <div class="panel-heading"><h4>Hospital Data</h4></div>
+                <div class="panel-heading"><h4>RS Mitra Keluarga Bekasi</h4></div>
                     <!-- Table -->
                 <table class="table">
                     <table class ="table-responsive">
@@ -32,16 +32,13 @@
                        			<tr>
                        				<th>Doctor No-Entry</th>
                        				<th>Doctor Name</th>
-                       				<th>Doctor Specialist</th>
-                       				<th>Hospital Name</th>
-                       				
+                       				<th>Doctor Specialist</th>	
                        			</tr>
                        			<?php foreach ($list_data as $data) { ?>
                        			<tr>
-                       				<td><?php echo $data['no'];?></td>
-                       				<td><?php echo $data['name'];?></td>
+                       				<td><?php echo $data['doctor_id'];?></td>
+                       				<td><?php echo $data['doctor_name'];?></td>
                        				<td><?php echo $data['specialist'];?></td>
-                       				<td><?php echo $data['hospital'];?></td>
                        			</tr>
                        			<?php } ?>
                        		</table>

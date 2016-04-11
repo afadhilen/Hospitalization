@@ -18,34 +18,21 @@
 	<div class="container">
         <div class='.col-xs-12 .col-sm-6 .col-md-8'>
           <ol class="breadcrumb">
-                <li><a href="<?php echo base_url() . 'c_doctor_mitra/mitra_cikarang_home' ?>">Home</a></li>
-                <li class="active">Data</li>
+                <li class="active">Home</li>
+                <li><a href="<?php echo base_url() . 'c_doctor_mitra/mitra_cikarang' ?>">Data</a></li>
                 <li><a href="<?php echo base_url() . 'c_doctor_mitra_schedule/mitra_cikarang' ?>">Schedule</a></li>
               </ol>
             <div class="panel panel-default">
                     <!-- Default panel contents -->
-                <div class="panel-heading"><h4>RS Mitra Keluarga Cikarang</h4></div>
-                    <!-- Table -->
-                <table class="table">
-                    <table class ="table-responsive">
-                       	<center>
-                       		<table class ="table table-striped table-hover">
-                       			<tr>
-                       				<th>Doctor No-Entry</th>
-                       				<th>Doctor Name</th>
-                       				<th>Doctor Specialist</th>
-                       			</tr>
-                       			<?php foreach ($list_data as $data) { ?>
-                       			<tr>
-                       				<td><?php echo $data['doctor_id'];?></td>
-                       				<td><?php echo $data['doctor_name'];?></td>
-                       				<td><?php echo $data['specialist'];?></td>
-                       			</tr>
-                       			<?php } ?>
-                       		</table>
-                       	</center>
-                       </table>
-                   </table>
+                <div class="panel-heading"><h3>Hospital Information</h3></div>
+                  <div class="panel-body">
+                    <?php foreach ($list_data as $data) { ?>
+                    <h4><?php echo $data['name'];?></h4>
+                    <h4>Address: </h4>  <?php echo $data['address'];?>        
+                    <h4>Contact: </h4>  <?php echo $data['phone'];?>       
+                    <h4>Email: </h4>  <?php echo $data['email'];?>
+                    <?php } ?>
+                  </div>
                </div>
            </div>
        </div>
